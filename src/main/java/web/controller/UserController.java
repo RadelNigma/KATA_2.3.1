@@ -34,19 +34,19 @@ public class UserController {
         return "editUser";
     }
     @PostMapping(value = "/edit")
-      public String update (@ModelAttribute("user") User user){
+    public String update (@ModelAttribute("user") User user){
         userService.edit(user);
         return "redirect:/";
     }
 
     @GetMapping(value = "/new")
-      public String newUser (@ModelAttribute("user") User user){
+    public String newUser (@ModelAttribute("user") User user){
         return "addUser";
     }
 
     @PostMapping(value = "/creat")
-      public String creatUser(@ModelAttribute("user") User user){
-      userService.add(user);
+    public String creatUser(@ModelAttribute("user") User user){
+        userService.add(user);
         return "redirect:/";
     }
     @GetMapping (value = "/delete/{id}")

@@ -17,16 +17,16 @@
         <th>action</th>
     </tr>
     <div th:each="user : ${users}">
-    <tr>
-        <td th:text="${user.getId()}">Value</td>
-        <td th:text="${user.getName()}">Value</td>
-        <td th:text="${user.getLastname()}">Value</td>
-        <td th:text="${user.getAge()}">Value</td>
-        <td th:text="${user.getEmail()}">Value</td>
-        <td><a th:href="@{/edit/{id}(id=${user.getId()})}">edit</a>
-            <a th:href="@{/delete/{id}(id=${user.getId()})}">delete</a>
-        </td>
-    </tr>
+        <tr>
+            <td th:text="${user.getId()}">Value</td>
+            <td th:text="${user.getName()}">Value</td>
+            <td th:text="${user.getLastname()}">Value</td>
+            <td th:text="${user.getAge()}">Value</td>
+            <td th:text="${user.getEmail()}">Value</td>
+            <td><a th:href="@{/edit/{id}(id=${user.getId()})}">edit</a>
+                <a th:href="@{/delete/{id}(id=${user.getId()})}">delete</a>
+            </td>
+        </tr>
     </div>
 </table>
 
