@@ -24,15 +24,7 @@ public class UserDAOImpl implements UserDAO{
 
     private static final AtomicInteger AUTO_ID = new AtomicInteger(0);
     private static Map<Integer,User> users = new HashMap<>();
-//
-//    static {
-//        User user1 = new User(AUTO_ID.getAndIncrement(),"Radel","Nigma",42,"radenigma@mail.com");
-//        User user2 = new User(AUTO_ID.getAndIncrement(),"Радель","Нигматуллин",42,"radig@mail.com");
-//        User user3 = new User(AUTO_ID.getAndIncrement(),"Александр","Пушкин",37,"pushkin@mail.com");
-//        users.put(user1.getId(),user1);
-//        users.put(user2.getId(),user2);
-//        users.put(user3.getId(),user3);
-//    }
+
 
     @Override
     public List<User> allUsers() {
