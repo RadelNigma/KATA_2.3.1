@@ -1,0 +1,25 @@
+set names utf-8;
+ALTER TABLE test.users CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci
+
+show table status like 'users';
+
+SELECT default_character_set_name FROM information_schema.SCHEMATA WHERE schema_name = 'test'; //посмотреть кодировку бд
+
+SELECT character_set_name FROM information_schema.`COLUMNS` //посмотреть кодировку в колонки в таблице
+WHERE table_schema = 'test'
+  AND table_name = 'users'
+  AND column_name = 'name';
+
+
+  ALTER DATABASE `test` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;  //смена кодировки бд
+  USE test;
+  ALTER TABLE `test`.`users` CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci; //смена кодировки таблицы
+  show table status;
+
+
+mysqldump -u USER -h localhost -p BASE | gzip -c > backup_base_`date +%Y-%m-%d`.sql.gz //запись бд
+
+mysql -u root -p
+CREATE DATABASE test_db1;  //создать бд с кодировкой по умолчанию
+CREATE DATABASE test_db2 CHARACTER SET utf8 COLLATE utf8_general_ci; //создать бд с кодировкой
+
