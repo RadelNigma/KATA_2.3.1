@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="KATA_2.3.1" options="--add-modules java.base,java.sql" />
+      <module name="KATA_2.3.1" options="" />
     </option>
   </component>
 </project>
