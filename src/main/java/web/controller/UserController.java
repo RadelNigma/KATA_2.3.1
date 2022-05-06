@@ -17,38 +17,39 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping(value = "/")
+    @GetMapping("/")
     public String allUsers(ModelMap model) {
         List<User> users = userService.allUsers();
         model.addAttribute("users", users);
         return "allUsers";
     }
 
-    @GetMapping(value = "/edit/{id}")
-    public String editUser(ModelMap model,@PathVariable("id")int id) {
-        model.addAttribute("user",userService.getById(id));
+    @GetMapping("/edit/{id}")
+    public String editUser(ModelMap model, @PathVariable("id") int id) {
+        model.addAttribute("user", userService.getById(id));
         return "editUser";
     }
-    @PostMapping(value = "/edit")
-    public String update (@ModelAttribute("user") User user){
+
+    @PostMapping("/edit")
+    public String update(@ModelAttribute("user") User user) {
         userService.edit(user);
         return "redirect:/";
     }
 
-    @GetMapping(value = "/new")
-    public String newUser (@ModelAttribute("user") User user){
+    @GetMapping("/new")
+    public String newUser(@ModelAttribute("user") User user) {
         return "addUser";
     }
 
-    @PostMapping(value = "/creat")
-    public String creatUser(@ModelAttribute("user") User user){
+    @PostMapping("/creat")
+    public String creatUser(@ModelAttribute("user") User user) {
         userService.add(user);
         return "redirect:/";
     }
-    @GetMapping (value = "/delete/{id}")
-    public String deleteUser(@PathVariable("id") int id){
+
+    @GetMapping("/delete/{id}")
+    public String deleteUser(@PathVariable("id") int id) {
         userService.delete(userService.getById(id));
         return "redirect:/";
     }
-
 }

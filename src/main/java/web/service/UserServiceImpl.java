@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public List<User> allUsers() {
-        return userDAO.allUsers() ;
+        return userDAO.allUsers();
     }
 
     @Override
